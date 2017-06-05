@@ -48,3 +48,23 @@ mat4 m2;
 mat4[3] = vec4(1, 2, 3, 1);
 m2 = mat4::scale(m1, vec3(10));
 ```
+
+## Declaring new types:
+
+``` cpp
+template<typename T>
+struct t_vec5 : t_vec<T, 5, t_vec5<T>> {};
+
+template<typename T>
+struct t_mat5x5 : t_mat<T, t_vec5<T>, t_vec5<T>, t_mat5x5<T>> {};
+
+typedef t_vec5<float> vec5;
+typedef t_mat5x5<float> mat5;
+
+int main() {
+	mat5 m;
+	m[0] = vec5(1, 2, 3, 4, 5);
+
+	return 0;
+}
+```
