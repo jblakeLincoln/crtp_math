@@ -9,6 +9,8 @@ compile down to match handwritten implementations.
 Full write-up on the implementation:
 <https://jordanblake.co.uk/articles/crtp_math.html>
 
+Wandbox playground: <https://wandbox.org/permlink/S3DqOoSiSAVzpL2Y>
+
 Declared types internally using floats:
  - vec2
  - vec3
